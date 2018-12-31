@@ -1,0 +1,6 @@
+<Application>
+  <TotalScenariosPage>
+    <createScenario using="xpath" value="//button[@label='Create']">
+    </createScenario>
+  </TotalScenariosPage>
+</Application>

@@ -1,0 +1,28 @@
+<Application>
+  <GroupAddCard>
+    <groupNameTextBox using="name" value="groupName">
+    </groupNameTextBox>
+    <scriptTypeRadioButton using="xpath" value="//p-radiobutton[@value='Script']">
+    </scriptTypeRadioButton>
+    <userProfileDropDown using="xpath" value="//div[text()='User Profile ']/parent::div/descendant::p-dropdown">
+    </userProfileDropDown>
+    <internetUserProfileXpath value="//div[contains(@class,'ui-dropdown-items-wrapper')]/child::ul//span[text()='%s']">
+    </internetUserProfileXpath>
+    <scriptProjectSelector using="xpath" value="//div[text()='Project ']/parent::div/descendant::p-dropdown">
+    </scriptProjectSelector>
+    <scriptSubProjectSelector using="xpath" value="//div[text()='Sub Project ']/parent::div/descendant::p-dropdown">
+    </scriptSubProjectSelector>
+    <scriptProjectNameXpath value="//div[contains(@class,'ui-dropdown-items-wrapper')]/child::ul//span[text()='%s']">
+    </scriptProjectNameXpath>
+    <scriptSubProjectNameXpath value="//div[contains(@class,'ui-dropdown-items-wrapper')]/child::ul//span[text()='%s']">
+    </scriptSubProjectNameXpath>
+    <scriptDropDownList using="xpath" value="//div[text()='Script ']/parent::div/descendant::p-dropdown">
+    </scriptDropDownList>
+    <scriptSearchBox using="xpath" value="//div[contains(@class,'ui-dropdown-items-wrapper')]/child::ul/ancestor::div[contains(@class,'ui-dropdown-panel')]/child::div[contains(@class,'ui-dropdown-filter-container')]/child::input">
+    </scriptSearchBox>
+    <scriptNameSelectXpath value="//div[contains(@class,'ui-dropdown-items-wrapper')]/child::ul//span[text()='%s']">
+    </scriptNameSelectXpath>
+    <groupAddOkBtn using="xpath" value="//p-dialog[contains(@class,'addEditGroupDialog')]/div/descendant::button/span[text()='OK']">
+    </groupAddOkBtn>
+  </GroupAddCard>
+</Application>

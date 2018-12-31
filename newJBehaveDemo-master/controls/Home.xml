@@ -1,0 +1,8 @@
+<Application>
+  <Home>
+    <loginUserNameLabel using="xpath" value="//div[contains(@class,'ui-splitbutton')]/button[contains(@class,'ui-button-text-icon-left')]/span[contains(@class,'ui-button-text')]">
+    </loginUserNameLabel>
+    <totalScenariosCard using="xpath" value="//md-card[contains(@class,'totalScenarioCard')]">
+    </totalScenariosCard>
+  </Home>
+</Application>

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<project name="JUnitDemo" default="" basedir=".">
+<target name="junit" depends="">
+<loadfile srcfile="" property="${src.file.replaced}">
+  <filterchain>
+    <filterreader classname="org.apache.tools.ant.filters.ReplaceTokens">
+      <param type="propertiesfile" value="sample.properties"/>
+    </filterreader>
+  </filterchain>
+</loadfile>	
+
+</target>
+</project>

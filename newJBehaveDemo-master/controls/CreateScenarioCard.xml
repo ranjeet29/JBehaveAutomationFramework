@@ -1,0 +1,13 @@
+<Application>
+  <CreateScenarioCard>
+    <projectSelector using="xpath" value="//div[text()='Project ']/parent::div/descendant::p-dropdown[contains(@class,'filterDrop')]">
+    </projectSelector>
+    <subProjectSelector using="xpath" value="//div[text()='SubProject ']/parent::div/descendant::p-dropdown[contains(@class,'filterDrop')]">
+    </subProjectSelector>
+    <createScenarioNextBtn using="xpath" value="//footer/descendant::button[@label='Next']">
+    </createScenarioNextBtn>
+    <scenarioNameTextBox using="xpath" value="//div[text()='Scenario Name ']/parent::div/descendant::input">
+    </scenarioNameTextBox>
+  </CreateScenarioCard>
+</Application>
+    

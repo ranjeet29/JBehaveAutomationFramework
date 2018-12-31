@@ -1,0 +1,10 @@
+<Application>
+  <Login>
+    <userNameTextBox using="name" value="name">
+    </userNameTextBox> 
+    <userPasswordTextBox using="name" value="password">
+    </userPasswordTextBox>
+    <loginButton using="id" value="login-button">
+    </loginButton>
+  </Login>
+</Application>

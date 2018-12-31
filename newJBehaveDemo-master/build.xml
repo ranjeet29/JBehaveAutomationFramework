@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<project name="JUnitDemo" default="junit" basedir=".">
+<taskdef resource="net/sf/antcontrib/antcontrib.properties"/>
+<path id="cav.classpath">
+  <fileset dir="jar">
+    <include name="*.jar" />
+  </fileset>
+</path>
+<target name="junit" depends="">
+    <mkdir dir="test-report"/>
+    <junit printsummary="yes" haltonfailure="true">
+
+	<!-- Project classpath, must include junit.jar -->
+	<classpath refid="cav.classpath" />
+		
+	<!-- test class -->
+	<classpath location="./classes" />
+		
+	<!--<test name="com.mkyong.test.TestMessage" haltonfailure="no" todir="./test-report">-->
+	<!--<test name="com.wmi.tutorials.bdd.stack.specs.StackBehaviourStory" haltonfailure="no" todir="./test-report">-->
+	<test name="com.cavisson.biswajit.ChromeTestStory" haltonfailure="no" todir="./test-report">
+		<formatter type="plain" />
+		<formatter type="xml" />
+	</test>
+		
+  </junit>
+</target>
+<target name="compile" depends="clean" description="compile source code">
+	<copy todir="./src" overwrite="true">
+		<fileset dir="./source">
+			<include name="*.java"/>
+			<include name="**/*.java"/>
+		</fileset>
+	</copy>
+	<loadfile property="changed.files" srcFile="./controls/Models.txt"/>
+	<for list="${changed.files}" param="changedFile" delimiter="${line.separator}">
+		<sequential>
+			<echo>@{changedFile}</echo>
+			<xmlproperty file="./controls/@{changedFile}.xml"  keepRoot="false" collapseAttributes="true"/>
+			<echoproperties destfile="my.properties"  prefix="@{changedFile}"/>
+			<!--<echoproperties  prefix="@{changedFile}"/>-->
+			<replace file="./src/POM/@{changedFile}.java" replacefilterfile="my.properties"/>
+  		</sequential>
+	</for>
+	<javac srcdir="src" destdir="classes" debug="true" includeantruntime="false">
+		<classpath refid="cav.classpath"/>
+	</javac>
+</target>
+
+<target name="clean">
+	<delete>
+		<fileset dir="classes">
+			<include name="*"/>
+		</fileset>
+		<fileset dir="test-report">
+			<include name="*"/>
+		</fileset>
+	</delete>
+</target>
+
+</project>
